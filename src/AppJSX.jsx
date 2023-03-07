@@ -1,6 +1,6 @@
 import './App.css';
 
-function App() {
+function AppJSX() {
   const name = 'jeje';
   const list = ['봄', '여름', '가을', '겨울'];
   return (
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppJSX;
