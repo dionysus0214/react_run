@@ -20,7 +20,6 @@ export default class Youtube {
           part: 'snippet',
           maxResults: 25,
           type: 'video',
-          relatedToVideoId: id,
         },
       })
       .then(res =>
@@ -38,7 +37,9 @@ export default class Youtube {
           q: keyword,
         },
       })
-      .then(res => res.data.map(item => ({...item, id: item.id.videoId})));
+      .then(res =>
+        res.data.items.map(item => ({...item, id: item.id.videoId})),
+      );
   }
 
   async #mostPopular() {

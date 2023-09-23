@@ -2,6 +2,7 @@ import React from 'react';
 import {useYoutubeApi} from '../context/YoutubeApiContext';
 import {useQuery} from '@tanstack/react-query';
 import VideoCard from './VideoCard';
+
 export default function RelatedVideos({id}) {
   const {youtube} = useYoutubeApi();
   const {
@@ -16,7 +17,7 @@ export default function RelatedVideos({id}) {
       {videos && (
         <ul>
           {videos.map(video => (
-            <VideoCard key={video.id} video={video} />
+            <VideoCard key={video.id} video={video} type="list" />
           ))}
         </ul>
       )}
